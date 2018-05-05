@@ -88,6 +88,7 @@ public class FakerService {
             jsonObject.put("id", faker.number().randomNumber(8, true));
             jsonObject.put("userName", faker.name().firstName() + faker.name().lastName());
             jsonObject.put("password", faker.crypto().sha256());
+            jsonObject.put("email" , faker.internet().emailAddress());
 
             users.add(jsonObject);
         }
@@ -119,9 +120,9 @@ public class FakerService {
     }
 
     public ArrayList<JSONObject> getUsers() {
-        return sports;
+        return users;
     }
     public ArrayList<JSONObject> getSports() {
-        return users;
+        return sports;
     }
 }
